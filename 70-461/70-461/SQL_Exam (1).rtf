@@ -1,0 +1,3981 @@
+{\rtf1\ansi\deff0\deflang2057\plain\fs24\fet1
+{\fonttbl
+{\f0\froman Arial;}
+}
+{\info
+{\createim\yr2017\mo5\dy24\hr21\min42}
+}
+{\stylesheet{\s1\ql \li0\fs28\outlinelevel0 \sbasedon0 \snext0 heading 1;}{\s2\ql \li200\fs26\outlinelevel1 \sbasedon0 \snext0 heading 2;}{\s3\ql \li400\fs24\outlinelevel2 \sbasedon0 \snext0 heading 3;}{\s4\ql \li600\fs22\outlinelevel3 \sbasedon0 \snext0 heading 4;}{\s5\ql \li800\fs20\outlinelevel4 \sbasedon0 \snext0 heading 5;}{\s6\ql \li1000\fs18\outlinelevel5 \sbasedon0 \snext0 heading 6;}{\s7\ql \li1200\fs16\outlinelevel6 \sbasedon0 \snext0 heading 7;}{\s8\ql \li1400\fs14\outlinelevel7 \sbasedon0 \snext0 heading 8;}}
+\paperw11907\paperh16840\margl1800\margr1800\margt1440\margb1440
+{\pard\ql\s1
+{\b\fs28
+SQL Exam
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+INDEXING & STATISTICS
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+INDEXES
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+TYPES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NON CLUSTERED INDEX
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+FILTER INDEX BY WHERE CLAUSE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CREATE CLUSTERED INDEX name ON tab(col)  WHERE col <!=> value/IS NOT NULL
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+INCLUDE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CLUSTERED INDEX
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CREATE CLUSTERED INDEX name ON tab(col)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+HEAP (NOT INDEXED)
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+DMV
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SYS.INDEXES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+dm_db_index_physical_stats()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+dm_db_index_operational_stats()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+sys.dm_db_index_usage_stats
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+SEARCH ARGUMENTS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CLAUSES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+GROUP BY
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+HAVING
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SELECT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WHERE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+DO NOT WRAP INDEX FIELDS IN FUNCTIONS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+TRY TO REPLACE OR WITH EQUAL EXPRESSION LINKED BY AND
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+STATISTICS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+AUTOCREATED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SET AUTO_CREATE _STATISTICS ON /OFF
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SET AUTO_UPDATE_STATISTICS ON/OFF
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+MANUAL
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SYNTAX
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CREATE STATISTICS schema.table(col) WHERE predicate WITH options
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+OPTIONS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SAMPLE
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+N PERCENET
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+N ROWS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+FULLSCAN/SAMPLE 100 PERCENT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+INCREMENTAL
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+ON/OFF
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+NORECOMPUTE
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+SET AUTO_UPDATE_STATISTICS OFF
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SYNTAX
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CREATE STATISTICS name FOR tablename(col,...) WITH options WHERE constraints
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+DMV
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+sys.indexes
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+sys.dm_db_index
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+dbo.sp_spaceused
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+REMOVING EXTERNAL FRAGMENTATION
+ {\field {\*\fldinst HYPERLINK "https://www.mindmeister.com/825573816#" }{\fldrslt (link)}}
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+ALTER INDEX REORGANIZE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DO NOT DROP INDEX, JUST REORGANIZE LEAF LEVEL ONLY
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+ALTER INDEX REBUILD
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DROPS AND REBUILD AN INDEX
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ALL (DROPS AND REBUILDS ALL INDEXES ON THE TABLE IN A SINGLE TRANSACTION)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+REBUILD CAUSES STATISTICS TO AUTOUPDATE
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+OPTIMIZATION
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+PLAN ITERATORS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+ACCES METHODS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+JOIN ALGORYTHMS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+OTHER PLAN ITTERATORS
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+TOOLS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+PLAN GUIDES
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+OPTIMIZER HINTS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+FORCE PLAN
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+JOIN TABLES IN THE SAME ORDER AS IN FROM
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+JOIN
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+MERGE
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+2 LARGE TABLES WITH INDEXES JOIN ON SORTED INDEX KEY
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+LOOP
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+ON TABLE BIGET THAN OTHER ONE, ONE INDEX
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+HASH
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+NOT INDEXED, NOT SORTED
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+REMOTE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SET OPTIONS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SET STATISTICS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SET STATISTICS IO ON/OFF
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SET STATISTICS TIME ON/OFF
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+PLANS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SET SHOWPLAN_XML ON/OFF
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+ESTIMATED PLAN WITHOUT EXECUTION
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SET STATISTICS XML ON/OFF
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+EXECUTION PLAN
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+DBCC DROPCLREANBUFFERS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CLEARS CACHE
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+PROCESSSING
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+BATCH PROCESSING
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+PARAMETRIZED QUERIES
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+OTHERS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SET STATISTICS PROFILE ON/OFF
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SHOW  CPU USAGE ETC.
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SHOWING EXECUTION PLAN
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SET SHOWPLAN_XML ON/OFF GO
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+QUARY SHOW PLAN INSTEAD OF EXECUTION
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SET STATISTICS XML ON/OFF  GO
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+QUERY SHOWS PLAN AND EXECUTES
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+PERFOMRMANCE
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+TOOLS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+QUERTY OPTIMIZER
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+PROFILER
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+EXTENDED EVENTS
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+QUERY PLANS
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+DYNAMIC MANAGMENT OBJECTS
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+CURSORS & TABLES
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+CURSOR
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CURSOR VS SET BASED SOLUTION
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+IMPLEMENTATION
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+OPTIONS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+FLOW
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+FORWARD_ONLY
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SCROLL
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+FIRST
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+LAST
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+NEXT
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+PRIOR
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+ABSOLUTE
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+RELATIVE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CONCURENCY
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+OPTIMISTIC
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+DO NOT LOCK RESOURCES, COMMITS CHANGE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+READ_ONLY
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+ONLY READ ALLOWED
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SCROLL_LOCK
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+LOCKS RESOURCES FOR A CHANGE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+REPRESENTATION
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+STATIC
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+DYNAMIC
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+KEYSET
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+FAST_FORWARD
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TYPE_WARNING
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+LOCAL/GLOBAL
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+FECH OPTIONS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TO VARIABLE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+FETCH NEXT FROM CURS INTO @VAR
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+RESULT SET
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+WHERE CURRENT OF CURS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CHECK
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+@@FETCH_STATUS = 0
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+STATES
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+0 SUCCESS
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+-1 ERROR
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+-2 MISSING RECORD
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+-9 NOT PERFORMING FETCH
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+TABLES VS TABLE VARIABLES
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+TABLE VARIABLES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+Declare @name
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO INDEXES ALLOWED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO DEFAULT VALUES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO TABLE STATISTICS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO CONSTRAINTS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+LOGGED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ISOLATION DEPENDING ON THE SCOPE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+TRANSACTION LIFESPAN
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+TEMPORARY TABLES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+Create #name
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN CREATE CONSTRAINTS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN CREATE INDEXES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN CREATE STATISTICS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+LOGGED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO ACCESS FROM OTHER BATCH/ISOLATED FROM OTHER USERS
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+TABLES
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+SELECT
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+QUERY PROCESSSING ORDER
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+FROM
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+WHERE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+GROUP BY
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+HAVING
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SELECT /  PARTITION BY
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+ORDER BY
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+TOP
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+FOR XML
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+ANY/SOME, ALL
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SOME/ANY  THE SAME AS IN BUT CAN USE < >
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+ALL
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+EXISTS
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+FUNCTIONS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+STRING
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CONCAT(val1, val2,val3...)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+LEN(val)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+REVERSE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+LEFT(string,star, charno) / RIGHT(string,star, charno)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+LTRIM/RTRIM
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+MATH
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+FLOOR(val, int)/CEILING(int)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ROUND(val, int)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ABS(val)
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CONVERSIONS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ERROR SAFE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+TRY_CAST(var as datatype)
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+FAILS IF EXPLICIT CONVERSION NOT POSSIBLE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+TRY_CONVERT(datatype, var, style-int)
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+FAIL IF EXPLICIT CONVERSION IS NOT POSSIBLE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+TRY_PARSE(string AS datatype USING culture)
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+STRING TO NUMBERS
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+STRING TO DATES
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+SELECT TRY_PARSE('Jabberwokkie' AS datetime2 USING 'en-US') AS Result;
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ERROR PRONE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CAST(val AS datatype)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CONVERT(datatype, val, additional params)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+PARSE(string AS datatype USING culture)
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+DATE TIME FUNCTIONS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+RETRIEVE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+datetime
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+GETUTCDATE()
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+GETDATE()
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+CURRENT_TIMESTAMP
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+datetime2
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+SYSDATETIME()
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+SYSUTCDATETIME()
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+datetimeoffset
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+SYSDATETIMEOFFSET()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+GET PARTS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+RETURN int
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+DAY
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+MONTH
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+YEAR
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+DATEPART(datepart,date)
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+WEEKDAY
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+RETURN varchar
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+DATENAME(datepart,date)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+MAKE FROM PARTS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+date
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+DATEFROMPARTS(year,month,day)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+datetime
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+DATETIMEFROMPARTS(year,month,day,hh,mm,ss,fractions)
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+DATETIMEOFFSETFROMPARTS(year,month,day,hh,mm,ss,fractions, precision, hhoff,mmofff)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+datetime2
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+DATETIME2FROMPARTS(year,month,day,hh,mm,ss,fractions, precision)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+smalldatatime
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+SMALLDATETIMEFROMPARTS(year,month,day, hh,mm)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+time
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+TIMEFROMPARTS(hh,mm,ss,fractions,precision)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DIFF
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+int
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+DATEDIFF(part, start, end)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+bigint
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+DATEDIFF_BIG(part, start, end)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+MODIFICATION
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+DATEADD(datepart,number,date)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+EOMONTH(stard, month_add)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SWITCHOFFSET(DATETIMEOFFSET,time_zone
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+TODATETIMEOFFSET(expression,time_zone)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CHECK
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+ISDATE(expression)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SETTINGS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+@@DATEFIRST
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SET DATEFIRST(number)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SET DATEFORMAT(fromat)
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CHECK
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NULL CHECK
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+ISNULL(val, valifnull)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+COALESCE(val1, val2,val3...)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ISNUMERIC(expr)
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+DATA TYPES
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+NUMERIC
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+FLOATING POINT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+DOUBLE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+FLOAT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+FIXED POINT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+MONEY
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+DECIMAL/NUMERIC
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+INT/BIGINT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CHARACTER
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+UNICODE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+NVARCHAR
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+NCHAR
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+VARCHAR
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CHAR
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+DATETIME
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+date
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+smalldatetime
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+datetime
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+datetime2
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+datetimeoffset
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+timestamp (depricated)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+time
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+uniqueidentifies
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NEWID()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NEWSEQUENTIALID()
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+ONLY IN DEFAULT STATEMENT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+VARBINNARY
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+BIT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+GEOGRAPHY/GEOMETRY
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+PREDICATED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NTEXT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TEXT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+IMAGE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TIMESTAMP
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+USER DEFINIED
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+FILTERING  & SORTING
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+TOP
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+N
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+N PERCENT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+EXECUTED AS LAST STATEMENT
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+OFFSET FETCH
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+MUST HAVE ORDER BY CLAUSE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SYNTAX
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+OFFSET n ROW FETCH NEXT/FIRST n ROWS ONLY
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+CASE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SIMPLE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+VALUE IN WHEN
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CASE input_expression         WHEN when_expression THEN result_expression [ ...n ]         [ ELSE else_result_expression ]    END
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SEARCH
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+BOOL IN WHEN
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CASE        WHEN Boolean_expression THEN result_expression [ ...n ]         [ ELSE else_result_expression ]    END
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+COMBINING SETS
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+JOINS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+MULTIJOINS-LEFT TO RIGHT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+LEFT + INNER JOIN
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+USE PARENTHES
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+JOIN TYPES
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+APPLY
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CROSS APPLY
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+OUTER APPLY
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+SETS ARYTHMETIC
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+UNION /UNION ALL
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+INTERSECT/EXCEPT
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+GROUPING & WINDOWING
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+GROUP BY
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+WINDOW
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+AGGREGATE FUNCTIONS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+RANK()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NTILE()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DENSERANK()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ROW_NUMBER()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ALL AGREGATION FUNCTION ALLOWED
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+OVER
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+PARTITION BY
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ORDER BY
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+First_Value(x)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+Last_Value(x)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+FRAMING
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+PRECEDING
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+UNBOUNDED
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+N
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+FOLLOWING
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+UNBOUNDED
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+N
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+CURRENT ROW
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+OFFSET
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+LEAD(x,2,-1)
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+LAG(x,2,-1)
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+PIVOT/UNPIVOT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+PIVOT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+USE CTE TO PREPARE DATA
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CONSTRAINTS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+NO MULTIPLE AGGREGATE FUNCTIONS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+NO SUBQUERIES IN THE IN CLAUSE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ELEMENTS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+AGGREGATION ELEMENT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SPREADING ELEMENT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+GROUPING ELEMENT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+UNPIVOT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+RETURNS VARCHAR(128)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ELEMENTS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SOURCE COLUMN TO UNPIVOT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+TARGET VALUES COLUMN
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+TARGET NAMES COLUMN
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+FULL TEXT DATA
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+INDEXING
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CATALOG
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+FULL TEXT SEARCH
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CONTAINS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+FREE TEXT
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+Querying XML
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+FOR XML
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+AUTO
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+RAW('name')
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+FOR PATH('name')
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+TYPE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+FUNCTIONS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+ATTRIBUTES @
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+ELEMENTS
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+XQUERY
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+DATA MODIFICATION
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+UPDATE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+VARIABLE BASED: SET @newdiscount = discount += 0.05
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+ALL AT ONCE: SET col1 += @add, col2 = col1
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+TABLE EXPRESSION
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+UPDATE JOIN BASED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NONDETERMINISTIC UPDATE POSIBILITY MANY SRC TO ONE TRGT (MERGE, CROSS APPLY)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CROSS APPLY
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+INSERT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+INSERT SELECT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WITH TABLOCK
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+INSERT EXEC
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SELECT INTO
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+COPY EVERYTHING BUT CONSTRAINTS,INDEXES AND TRIGGERS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+APPLYING TRANSFORMATIONS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+REMOVE IDENTITY: + 0
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+APPLY NOT NULABILITY: ISNULL()
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CHANGE TYPE: CAST/CONVERT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+ANY TRASNFORMATION MAKES FIELD NULL
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ADDING CONSTRAINTS MANUALY
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO FILE GROUPS CONTROL
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+INSERT VALUES
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+DELETE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+DELETE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+REQUIRES DELETE PERMISSION
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN HAVE WHERE FILTER
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+POSSIBLE IF FK EXISTS AND NO REFS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+FULLY LOGGED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DO NOT RESET IDENTITY
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DELETE ALLOWED ON IDEXED VIEW
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+TRUNCATE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TRUNCATE RESET IDENTITY
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TRUNCATE HAS MIN LOGGING
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NOT POSSIBLE IF FK EXIST AND NO  REFS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+REQUIRES ALTER PERMISSSION
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO WHERE CLAUSE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NOT ALLOWED ON IDEXED VIEWS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+DELETE TABLE EXPRESSION
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+DELETE JOIN BASED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+JOIN
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+(STANDARD) EXIST
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+TABLES & INTEGRITY ENFORCEMENT
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+CONSTRAINS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+DEFAULT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+UNIQUE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CHECK
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ONLY SCALAR ARE ALLOWED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN NOT USE RESULT OF THE SUBQUERY
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+PK
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN ONLY BE SINGLE PER TABLE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+GUARANTY UNIQUNES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+MUST BE CREATED IF WE WANT TO USE FK
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+FK
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+REQUIRES PK CREATED ON OTHER TABLE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CALCULATED COLUMN
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+PERSISTED
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+ADD TOTAL AS X+Y PERSISTED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NON PERSISTED
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+CREATE TABLES
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+ALTER TABLES
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+ADD newGuidId UniqueIdentifier NULL CONSTRAINT DF_Guid Default newid() with value
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+VIEWS, INLINE FUNCTIONS,SYNONYMS
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+VIEWS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+OPTIONS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WITH SCHEMABINDING
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WITH ENCRYPTION
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WITH VIEW_METADATA
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+WITH CHECK OPTION
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+PREVENST FALLING DATA OUTSIDE OF FILTER
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+PREVENTS MODIFICATION OF DATA OUTSIDE FILTER
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+RESTRICTIONS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ORDER BY ONLY IF TOP/OFFSET
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO SELECT INTO
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+REF ONLY PERMANENT TABLES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO OPTION CLAUSE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+UPDATES,INSERTS AND DELETES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO  COLS AFFECTED BY AGG FUNCTIONS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO  COLS AFFECTED BY HAVING,GROUPING, DISTINCT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO DERRIVED COLUMN
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ONE TABLE AT THE TIME
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO UNION/UALL/EXCEPT/INTERSECT CROSS JOIN
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TOP/OFFSET WITH  "WITH CHECK"
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SYS.VIEWS/SYS.SQL_MODULES-BODY OF THE VIEW
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+VIEW TYPES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+PARTITIONED VIEWS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+TABLES WITH  WITH CHECK CONSTRAINT ON PK (RANGES)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+VIEW REFERENCE TABLES BY UNION ALL
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CAN SPAN SERVERS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+MODIFICATIONS ALLOWED
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+UPDATE OF PK THROUGH DELETE AND RECREATE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+INDEXED VIEWS CH15
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CREATE UNIQUE CLUSTERED INDEX IDX_V1 ON vname(col)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+WITH SCHEMABINDING
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+NO SYNONYMS ALLOWED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NORMAL VIEW
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+SYNONYMS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+RUN TIME CHECK OF THE OBJECT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+ALLOWED OBJECTS REF
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TABLES/TEMP TABLES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+VIEWS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+UDF
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+STORED PROC
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CLR ASSEMBLIES
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CONSTRAINTS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN NOT REF SYNONYMS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DO NOT ALLOW DDL ON UNDERLYING OBJECT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO SCHEMA BINDING OPTION
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN NOT BE USED IN SCHEMABINDING
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN NOT BE MODIFIED (DROP/RECREATE)
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+PERMISSIONS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CREATE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CREATE SYNONYM
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+OWN OR ALTER SCHEMA
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+USE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SELECT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+EXECUTE
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+INLINE FUNCTIONS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CAN NOT CREATE VARIABLES
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+ONLY SINGLE SELECT STATEMENET ALLOWED
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CAN HAVE NO PARAMETERS BUT MUST HAVE ()
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+OTHER MODIFICATION
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+IDENTITY
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+LAST VALUE RETRIVAL
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SESSION INDEPENDEDN
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+IDENT_CURRENT('tabname')
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SESSION DEPENDED
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SCOPE_IDENTITY -SCOPE DEPENDENT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+@@IDENTITY
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+RESEED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DBCC CHECKIDENT('tablename',RESEED,4);
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN NOT BE USED IF NO ROWS INSERTED IN THE TABLE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+PROPERTIES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+IDENTYTY (SEED, JUMP)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DO NOT GUARANTY UNIQUENESS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+UNIQUE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+PK
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DO NOT GUARANTY NO GAPS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO CYCLING (MAX VALUE +1) ERRORS TYPE OVERFLOW
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ONE PER TABLE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN NOT GENERATE VALUE BEFOR USAGE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN NOT BE REMOVED FROM TABLE WITHOUT DROPING COLUMN
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+SEQENCE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CHARACTERISTIC
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN GENERATE VALUE BEFORE USING IT(STORED IN VARIABLE)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SUPPORTS CYCLING
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+COL CAN BE UPDATED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CACHE/NO CACHE -DEFAULT 50
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TYPES
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+BIGINT DEFAULT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+INT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+DECIMAL/NUMERIC
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+OTHER 0 BASED
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+ALL INTS + DECIMAL/NUMERIC BASED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TRUNCATE DO NOT AFFECT IT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN BE DROPED AS WE CAN DROP DEFAULT CONSTRAINT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+PROPERTIES TO SET
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+START WITH 0/RESTART WITH 0
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+MINVALUE -2
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+MAXVALUE 100
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+INCREMENT BY 2
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CYCLE/NO CYCLE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CACHE/CACHE 100/NO CACHE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+ALTER SEQUENCE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ALTERING PROPS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+ALTER SEQUENCE name RESTART WITH 1
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+ALL PROPS AVAILABLE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CAN NOT CHANGE TYPE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+USAGES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+UPDATE SET
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+INSERT INTO VALUES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+INSERT INTO SELECT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CONTROL ORDER BY ADING: OVER (ORDER BY ORDERID)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DEFAULT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SYS.SEQUENCES
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+MERGE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+OPTIONS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WHEN MATCHED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WHEN NOT MATCHED BY SOURCE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WHEN NOT MATCHED BY TARGET
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+MULTIHREAD MERGE CALL
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WITH HOLDLOCK
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WITH SERIALIZABLE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CHARACTERISTICS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+"ON" CLAUSE IS NOT A FILTER
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ALLOWED TWO WHEN MATCHED
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+DELETE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+UPDATE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+USING CLAUSE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SELECT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+JOIN
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+APPLY
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+PIVOT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+UNPIVOT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CTE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+NOT ALLOWED STORED PROCS RESUTLS!!!
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+OPENROWSET
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+OPENXML
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+VALUES()
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+TABLES
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+TABLE VARIABLES
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+TABLE FUNCTIONS
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+OUTPUT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+INSERT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+INSERT INTO targetTable OUTPUT inserted.col INTO outputTable SELECT * FROM sourceTable
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+DELETE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DELETE FROM targetTable OUTPUT deleted.col INTO outputTable
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+UPDATE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+UPDATE targetTable SET col ='value'  OUTPUT inserted.col, deleted.col INTO outputTable
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+MERGE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+$Action variable
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+OUTPUT $action AS the_action, COALESCE(inserted.orderid, deleted.orderid) AS orderid;
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+OUTPUT inserted.col INTO tableName
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO TRIGGERS IN OUTPUT TABLE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO CONSTRAINS ALLOWED IN OUTPUT TABLE (FK)
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SINGLE STATEMENT CAN HAVE TWO OUTPUT CLAUSE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+INTO TABLE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WITHOU INTO TABLE
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+TRANSACTIONS & ERROR HANDLING
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+TRANSACTIONS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+sys.dm_tran_active_transactions
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+WITH MARK
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+RESTORE WITH STOP MARK
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+RESTORE WITH STOP BEFORE MARK
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NAME HAVE TO BE APPLIED TO OUTER TRANSACTION
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+TYPES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+IMLICIT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SET IMPLICIT_TRANSACTIONS ON/OFF
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+EXECUTION OPENS TRANSACTION
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+BEGIN RAISE @@TRANCOUNT = 2
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+EXPLICIT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+BEGIN TRAN/COMMIT TRAN/ROLLBACK TRAN MUST BE DEFINIED
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CHECK @@TRANCOUNT>0 BEFORE EACH COMMIT/ROLLBACK
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+AUTOCOMMIT(DEFAULT)
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+OPTIONS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SET XACT_ABORT OFF/ON
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+ON
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+ON ERROR ABORTS, ROLBACK  AND STOPS EXECUTION
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+OFF
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+ON ERROR ROLLBACK AND QUERY CONTINUE
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+LOCKING
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+ISOLATION LEVELS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ISOLATION LEVELS TYPES
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+READ COMMITED
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+READS ONLY COMITTED, LOCKS READ
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+READ UNCOMMITED
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+READS DIRTY DATA
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+DO NOT LOCK READ
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+LOCKS WRITE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SERIALIZABLE
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+LOCKS READS
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+LOCKS WRITES WITH ERROR
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SNAPSHOT
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+WRITES
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+LOCKS ON WRITE AND THROWS ERROR
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+READS
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+LOCK FREE-GETS PREV VALUE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+REPETABLE READ
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+READ COMMITED SNAPSHOT
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+REDUCE TEMPDB
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+REPEATS READS EVERY ON ROW BASIS
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+READ
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+LOCK FREE
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+WRITE
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+LOCKS AND DO UPDATE (OPTYMISTIC WRITE)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TRANASACTION INFLUENCE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+DIRTY READ
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+NON REPETABLE READ
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+LOST UPDATE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+PHANTOM ROWS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+LOCKS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+DEADLOCKING
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+STATE CHECK
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+@@trancount
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+XACT_STATE()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+error has ocured  so it is uncomitable -1
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+No active transactions 0
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+e.g print xact_state();
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+Thee curret request has an active transaction 1
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+ERROR
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+BEGIN TRY, CATCH
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+FUNCTIONS INSIDE CATCH BLOCK
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ERROR_NUMBER() / @@ERROR
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ERROR_SEVERITY()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ERROR_STATE()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ERROR_PROCEDURE()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ERROR_LINE()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ERROR_MESSAGE()
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+PROPERTIES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+LEVEL
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+LEVEL >16 (26) AUTOLOGGED
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+LEVEL 19-25 -SYSADMIN FIXED SERVER ROLE(FATAL)
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+LEVEL (0-10) INFORMATIONAL
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+STATE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+0-127 ms INTERNAL
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ERROR MESSAGE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+255 CHARS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+LISTED IN sys.messages
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+ADD CUSTOM MESSAGE sp_addmessage
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+FORMAT_MESSAGE()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ERROR NUMBER
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+BUILDED IN 1-49999
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CUSTOM WITHOUT NUMBER 50000
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CUSTOM >50000
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+RAISING ERRORS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+THROW
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+RAISEERROR
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+DYNAMIC SQL
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+sp_executesql
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+EXEC
+}
+\par}
+{\pard\ql\li200\s2
+{\fs26
+PROGRAMABILITY
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+STORED PROCS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+BRANCHING
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+IF/ELSE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WHILE truecondition BEGIN END
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+GOTO labelname/LABEL labelname
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WAITFOR
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+DELAY '00:00:10'
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+TIME '23:22:12'
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+RECEIVE (BROKER)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+RETURN
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CONTINUE
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+RESULTS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+RESULT SET
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+OUTPUT PARAMETER
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+@numrows AS INT = 0 OUTPUT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+RETURN @int
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+RETURNS STATUS INT TO THE CALLER APP
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+PARAMS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+@orderdateto AS DATETIME = '99991231',
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SET NOCOUNT ON
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+TRIGGERS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+EVENTS ALLOWED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+UPDATE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DELETE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+INSERT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CHARACTERISTICS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+EXECUTE ONCE PER QUERY/ NOW MATTER HOW MANY ROWS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TR
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+AFTER TRIGGER CAN BE NETSED
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+EXEC sp_configure 'nested triggers', 0;
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+TYPES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DML
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DDL
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+EXECUTION TIME
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+FOR/AFTER
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+INSTEAD OF
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+BEHAVOUR
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+WITH APPEND
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NOT FOR REPLICATION
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+FOR
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SQL STATEMENT
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+EXTERNAL NAME assembly_name.class_name.method_name
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+OPTION
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ENCRYPTIOIN
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+EXECURE AS
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+CHECK FOR UPDATES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+HELPER TABLES
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+INSERTED
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+DELETED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+FUNCTIONS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+IF UPDATE(col)
+}
+\par}
+{\pard\ql\li400\s3
+{\fs24
+UDF
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+SCALAR VALUED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+USAGE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SELECT CLAUSE
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+SELECT Orderid, unitprice, qty, Sales.fn_extension(unitprice, qty) AS extension
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+EXECUTED ONCE PER ROW RETRIVED
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+WHERE CLAUSE
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+Sales.fn_extension(unitprice, qty) > 1000;
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+EXECUTED ONCE PER ROW IN SOURCE TABLE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TYPES
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+FN-SCALAR
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CHARACTERISTIC
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+RETURN SINGLE VALUE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CODE MUST BE ENCOLSED IN BEGIN END
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CAN ADD MULTISTATEMENT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+PREVENT QUERIS FROM BEEING PARALLELIZED
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+TABLE VALUED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+OPTIONS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+RETURN A TABLE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+USAGE
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+FROM CLAUSE
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+TYPES
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+IF-INLINE
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+IS LIKE PARAMETRIZED VIEW
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+INSERT ALLOWED
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+UPDATE ALLOWED
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+DELETE ALLOWED
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+RETURNS TABLE AS RETURN ( <SELECT \u8230?> );
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+CHARACTERISTIC
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+CAN BE WITHOU BEGIN END (ONLY THIS UDF)
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+RETURN + SINGLE SELECT STATEMENT
+}
+\par}
+{\pard\ql\li1400\s8
+{\fs14
+CAN NOT RETURN
+}
+\par}
+{\pard\ql\li1600\s9
+{\fs12
+NTEXT
+}
+\par}
+{\pard\ql\li1600\s9
+{\fs12
+TEXT
+}
+\par}
+{\pard\ql\li1600\s9
+{\fs12
+TIME STAMP
+}
+\par}
+{\pard\ql\li1600\s9
+{\fs12
+CURSOR
+}
+\par}
+{\pard\ql\li1600\s9
+{\fs12
+XML
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+TF- MULTISTATEMENT
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+RETURN STATEMENT ON THE END
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+MUST DECLARE TABLE SCHEMA THAT IS RETURNED AND DO INSERT
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+UDF OPTIONS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+ENCRYPTION
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+SCHEMABINDING
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+RETURN NUL ON NULL INPUT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+NO EXECUTION IF NULL PASSED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CALLED ON NULL INPUT
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+EXECUTES EVEN IF NULL PASSED
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+EXECUTE AS
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+OWNER
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+SELF
+}
+\par}
+{\pard\ql\li1200\s7
+{\fs16
+PERSON WHO ALTER FUNC
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+'user name'
+}
+\par}
+{\pard\ql\li1000\s6
+{\fs18
+CALLER
+}
+\par}
+{\pard\ql\li600\s4
+{\fs22
+LIMITATIONS (CAN NOT)
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+DO DDL
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+BE EXECUTED BY EXEC
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CREATE TEMPORARY TABLES
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CALL STORED PROCS
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+EXECUTE DYNAMIC SQL
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+CHANGE STATE OF SQL SERVER
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+USE RAND() AND NEWID()
+}
+\par}
+{\pard\ql\li800\s5
+{\fs20
+NO OUTPUT CLAUSE INTO TABLE
+}
+\par}
+}
